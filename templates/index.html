@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Spell-Checking</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+        integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="">
+</head>
+
+<body>
+
+    <p style="margin-bottom:0.2cm;"></p>
+    <header>
+        <div class="container">
+            <div class="container col-lg-6 text-center">
+                <h2>NeuSpell: A Neural Spelling Correction Toolkit</h2>
+            </div>
+        </div>
+    </header>
+
+    <p style="margin-bottom:1cm;"></p>
+   
+    <p style="margin-bottom:0.5cm;"></p>
+    <div class="container col-lg-6">
+        <div style="padding-bottom: 0.5cm">
+            <div class="card text-center bg-light">
+                <div class="card-body" style="padding-bottom:0.2cm; ">
+                    <form action="" method="POST" onsubmit='copyContent()'>
+                        <!-- need to be div because we wanna color partially -->
+                        <!-- newly added snippet start -->
+                        <textarea name="hidden-message" id="hidden-message" style="display:none;"></textarea>
+                        <script>
+                            function copyContent() {
+                                document.getElementById("hidden-message").value =
+                                    document.getElementById("message-txt").innerText;
+                            }
+                        </script>
+                        <!-- newly added snippet end -->
+                        <div class="card-title form-control" type="text" id="message-txt" name="message"
+                            placeholder="Enter some text for spell checking..." rows="3" cols="50"
+                            contenteditable="true" style="text-align:left;"></div>
+                        <input class="card-text btn btn-outline-primary" style="position: absolute; left: 36%;" id="btn"
+                            type="submit" value="correct it"></button>
+                        <div class="spinner" id="spinner" style="display: none">
+                            <div class="double-bounce1"></div>
+                            <div class="double-bounce2"></div>
+                        </div>
+                    </form>
+                    <form action="" method="POST">
+                        <input class="card-text btn btn-outline-primary" style="position: relative; left: 7%;" id="btn"
+                            type="submit" value="reset" name="message"></button>
+                        <div class="spinner" id="spinner" style="display: none">
+                            <div class="double-bounce1"></div>
+                            <div class="double-bounce2"></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    
+
+</body>
+
+</html>
