@@ -7,10 +7,13 @@ app = Flask(__name__)
 def index():
     if request.method == 'POST':
         username = request.form['username']
-
         checker = SpellChecker("./movies_text.txt")
-        result = checker.check(username)[0][0]
-        # return (result)
+        sen = username.split()
+        rel = []
+        for wo in sen:
+            rel.append(checker.check(wo)[0][0])
+        
+        result = " ".join(rel)
         return render_template('index2.html', result=result)
 
     return render_template('index2.html')
