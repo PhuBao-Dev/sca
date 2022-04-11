@@ -14,9 +14,9 @@ def index():
             rel.append(checker.check(wo)[0][0])
         
         result = " ".join(rel)
-        return render_template('index2.html', result=result)
+        return render_template('index.html', result=result, getIn=username)
 
-    return render_template('index2.html')
+    return render_template('index.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
