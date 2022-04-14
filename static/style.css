@@ -1,6 +1,6 @@
 body{
-  background-image: url("bg.jpg");
-  /* background-color: red; */
+  /* background-image: url("bg.jpg"); */
   color: white;
-  /* min-height: 100vh; */
+  /* opacity: 0.2; */
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url("bg.jpg");
 }
