@@ -10,6 +10,7 @@ def index():
         checker = SpellChecker("./movies_text.txt")
         sen = sentence.split()
         rel = []
+        
         for wo in sen:
             rel.append(checker.check(wo)[0][0])
         

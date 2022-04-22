@@ -3,7 +3,6 @@ import string
 from collections import Counter
 
 class SpellChecker(object):
-
   def __init__(self, corpus_file_path):
     with open(corpus_file_path, "r") as file:
       lines = file.readlines()
@@ -30,9 +29,8 @@ class SpellChecker(object):
     return set(e2 for e1 in self._level_one_edits(word) for e2 in self._level_one_edits(e1))
 
   def check(self, word):
+    if (word in self.vocabs):
+      return [[word]]
     candidates = self._level_one_edits(word) or self._level_two_edits(word) or [word]
     valid_candidates = [w for w in candidates if w in self.vocabs]
     return sorted([(c, self.word_probas[c]) for c in valid_candidates], key=lambda tup: tup[1], reverse=True)
-
-
-
